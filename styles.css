@@ -1,0 +1,95 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+}
+
+
+
+/* CSS FOR NAVIGATION BAR */
+
+.navigation_bar {
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 10px 5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: wheat;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.categories {
+    display: flex;
+    gap: 10px;
+}
+
+.categories a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.categories a:hover {
+    text-decoration: underline;
+    color: rgb(198, 213, 62);
+}
+
+.news_input {
+    border: 2px solid black;
+    padding-inline: 10px;
+    border-radius: 5px;
+    height: 25px;
+}
+
+.search_button {
+    cursor: pointer;
+    color: white;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    padding: 5px 10px;
+}
+
+.search_button:hover {
+    background-color: rgb(127, 127, 210);
+}
+
+
+
+/* CSS FOR CARDS */
+
+.card_container {
+    padding: 4rem 5rem;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 350px;
+    border-radius: 7px;
+    box-shadow: 0 0 4px #dfe1e2;
+    background-color: rgb(221, 214, 214);
+    transition: all 0.1s ease;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 3px rgb(54, 52, 52);
+    cursor: pointer;
+    transform: translateY(-7px);
+}
+
+.card_image {
+    width: 100%;
+    height: 200px;
+}
+
+.card_details {
+    padding: 12px;
+}
