@@ -1,0 +1,388 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*Making CSS variables for color codes*/
+:root {
+    --primary-text-color: #4a4a4a;
+    /*for primary text */
+    --secondary-text-color: #9e9e9e;
+    /*for secondary text */
+    --accent-color: #63c1f4;
+    /*for accents */
+    --accent-hover-color: #50a8e1;
+    /*for hover */
+    --background-color: #f5f5f5;
+    /*for background */
+    --card-border-color: #dcdcdc;
+    /*for cards border */
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: var(--primary-text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-text-color);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1180px;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+
+/* CSS For Navigation Bar */
+nav {
+    background-color: #50a8e1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 15px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.company-logo img {
+    height: 30px;
+}
+
+.company-logo {
+    display: flex;
+    align-items: center;
+}
+
+.company-logo .logo-text {
+    color: white;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 8px;
+}
+
+.nav-links ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+}
+
+.nav-item.active {
+    color: rgb(49, 47, 47);
+    font-weight: bold;
+}
+
+
+/* CSS For Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.news-input {
+    width: 200px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: var(--accent-hover-color);
+}
+
+
+/* Main content */
+main {
+    padding: 120px 0 20px;
+}
+
+
+/* CSS For Cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: calc(33.333% - 20px);
+    background-color: #fff;
+    border: 1px solid var(--card-border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: default;
+    height: 500px;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.card-header {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 16px;
+}
+
+.news-title {
+    font-size: 18px;
+    color: var(--primary-text-color);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.news-source {
+    font-size: 14px;
+    color: var(--secondary-text-color);
+    margin-bottom: 12px;
+}
+
+.news-desc {
+    font-size: 15px;
+    color: var(--secondary-text-color);
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#read {
+    display: block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#read:hover {
+    background-color: var(--accent-hover-color);
+}
+
+
+/* Article Detail */
+
+.article-detail {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 24px;
+    background-color: #fff;
+    border: 1px solid var(--card-border-color);
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-detail h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.article-detail p {
+    font-size: 18px;
+    color: var(--secondary-text-color);
+    margin-bottom: 20px;
+}
+
+.article-detail img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+#original-article-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#original-article-link:hover {
+    background-color: var(--accent-hover-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+
+    /* Tablet Layout */
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        /* Reduce space between logo, nav links, and search bar */
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-item {
+        text-align: center;
+        padding: 6px 10px;
+        /* Reduce padding for a more compact look */
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .company-logo {
+        justify-content: center;
+        margin-bottom: 8px;
+        /* Reduce the space between logo and nav links */
+    }
+
+    .search-bar {
+        margin-top: 8px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .card {
+        width: calc(50% - 20px);
+        /* 2 columns on tablets */
+    }
+
+    main {
+        padding: 140px 0 20px;
+        /* Increase the padding for navbar */
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Mobile Layout */
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-item {
+        text-align: center;
+        padding: 6px 10px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .search-bar {
+        margin-top: 8px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .company-logo {
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    main {
+        padding: 160px 0 20px;
+        /* Increase padding further on smaller screens */
+    }
+}
