@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,15 @@
 
 <body>
 
-    <nav>
+    <div class="loader-container">
+        <div class="loader">
+            <span class="percentBar">
+                <h3 class="number">0%</h3>
+            </span>
+        </div>
+    </div>
+
+    <nav class="content">
         <div class="main-nav container flex">
             <a href="#" onclick="reload()" class="company-logo">
                 <img src="./company-logo.jpg">
@@ -26,10 +34,14 @@
                     <li class="hover-link nav-item" id="education" onclick="onNavItemClick('education')">Education</li>
                 </ul>
             </div>
-            <div class="search-bar flex">
+            <label class="search-bar flex">
                 <input id="search-text" type="text" class="news-input" placeholder="e.g. Health">
                 <button id="search-button" class="search-button">Search</button>
-            </div>
+            </label>
+            <label class="switchMode">
+                <input type="checkbox" id="toggleModeButton" onclick="toggleMode()" checked>
+                <span class="toggle round"></span>
+            </label>
         </div>
     </nav>
 

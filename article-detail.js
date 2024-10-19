@@ -25,3 +25,12 @@ window.addEventListener("load", () => {
         document.querySelector('.article-detail').innerHTML = "<p>Article not found.</p>";
     }
 });
+
+
+
+// Function to return to home page
+const backButton = document.getElementById("back-button");
+
+backButton.addEventListener("click", () => {
+    window.location.href = "index.html";
+});

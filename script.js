@@ -1,7 +1,39 @@
 const API_KEY = "824703ee848b4404b51e035a09edbc47";
 const url = "https://newsapi.org/v2/everything?q=";
 
-window.addEventListener("load", () => fetchNews("India"));
+window.addEventListener("load", () => loader());
+
+// Function for loader
+function loader() {
+    let i = 0;
+    let content = document.querySelector(".content");
+    let loader = document.querySelector(".loader");
+    let loaderContainer = document.querySelector(".loader-container");
+    let body = document.querySelector("body");
+    let number = document.querySelector(".number");
+    let percentBar = document.querySelector(".percentBar");
+
+    let interval = setInterval(function () {
+        number.innerHTML = i + '<span>%</span>';
+        percentBar.style.width = i + '%';
+        i++;
+        if (i == 101) {
+            clearInterval(interval)
+            setTimeout(function () {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+                loaderContainer.style.opacity = '0';
+                loaderContainer.style.visibility = 'hidden';
+                loaderContainer.style.display = 'none';
+                content.style.opacity = '1';
+                content.style.visibility = 'visible';
+                fetchNews("India");                     // Calling the API for the first time !
+            })
+        }
+    }, 100)
+
+}
+
 
 // Function to reload the page
 function reload() {
@@ -107,3 +139,9 @@ searchButton.addEventListener("click", () => {
     curSelectedNav?.classList.remove("active");
     curSelectedNav = null;
 });
+
+// Function to handle Light/Dark Mode
+function toggleMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
